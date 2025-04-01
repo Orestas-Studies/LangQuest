@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient'; // Import LinearGradient
-import { Ionicons } from '@expo/vector-icons'; // Import Ionicons for the settings icon
+import { Ionicons } from '@expo/vector-icons'; // Import Ionicons for the icons
 
 const HomeScreen = () => {
   const router = useRouter(); // Hook to navigate to different routes
@@ -19,6 +19,10 @@ const HomeScreen = () => {
     router.push('/settingScreen'); // Navigate to the "settings" route (SettingsScreen)
   };
 
+  const handlePressGuest = () => {
+    router.push('/profileScreen'); // Navigate to the "guest" route (GuestScreen)
+  };
+
   return (
     <View style={styles.container}>
       {/* Background Linear Gradient */}
@@ -30,6 +34,11 @@ const HomeScreen = () => {
       {/* Settings Button - Positioned in the top-left corner */}
       <TouchableOpacity onPress={handlePressSettings} style={styles.settingsButton}>
         <Ionicons name="settings-outline" size={32} color="#f0cd95" />
+      </TouchableOpacity>
+
+      {/* Guest Button - Positioned next to the settings button */}
+      <TouchableOpacity onPress={handlePressGuest} style={styles.guestButton}>
+        <Ionicons name="person-outline" size={32} color="#f0cd95" /> 
       </TouchableOpacity>
 
       {/* Text above the button */}
@@ -76,6 +85,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 40, // Space from the top
     left: 20, // Space from the left
+    zIndex: 1, // Ensure the button is above other elements
+  },
+  guestButton: {
+    position: 'absolute',
+    top: 40, // Space from the top
+    left: 370, // Adjusted space from the left for guest button
     zIndex: 1, // Ensure the button is above other elements
   },
   title: {

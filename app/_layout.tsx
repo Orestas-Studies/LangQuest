@@ -7,6 +7,7 @@ export default function Layout() {
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="gameScreen" options={{ headerShown: true }} />
+      <Stack.Screen name="profileScreen" options={{ headerShown: false }} />
     </Stack>
   );
 }
