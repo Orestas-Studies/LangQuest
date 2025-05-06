@@ -43,14 +43,12 @@ LangQuest is a mobile app that helps users learn new languages through interacti
 
     ```bash
     npm install
-    # or
-    yarn install
     ```
 
 4. Run the app:
 
     ```bash
-    expo start
+    npm run start
     ```
 
 ## Usage
@@ -78,7 +76,7 @@ We have big plans for LangQuest and are constantly working to improve the app. H
 
      ```bash
     Gamification: Introduce achievements, leaderboards, and rewards to make learning even more engaging
-    ```
+```
 
 ## License
 
